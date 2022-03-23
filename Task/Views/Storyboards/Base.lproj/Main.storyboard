@@ -18,14 +18,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" id="IRt-Im-o3I">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" rowHeight="156" id="IRt-Im-o3I" customClass="TaskTableViewCell" customModule="Task" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="156"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IRt-Im-o3I" id="zfY-zQ-gei">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="156"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GOn-qh-cAZ">
+                                            <rect key="frame" x="20" y="15" width="374" height="126"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETe-0e-yWx">
+                                                    <rect key="frame" x="0.0" y="54.5" width="334" height="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Me8-4U-qOz">
+                                                    <rect key="frame" x="350" y="51" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="SVV-Vf-zjo"/>
+                                                        <constraint firstAttribute="width" secondItem="Me8-4U-qOz" secondAttribute="height" multiplier="1:1" id="Z2k-EG-hmc"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Button" image="incomplete"/>
+                                                    <connections>
+                                                        <action selector="completedButtonTapped:" destination="IRt-Im-o3I" eventType="touchUpInside" id="HKD-RK-WYv"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="GOn-qh-cAZ" secondAttribute="bottom" constant="4" id="89m-nO-Bsk"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="GOn-qh-cAZ" secondAttribute="trailing" id="GD6-9E-4mu"/>
+                                        <constraint firstItem="GOn-qh-cAZ" firstAttribute="leading" secondItem="zfY-zQ-gei" secondAttribute="leadingMargin" id="JDo-m5-9yJ"/>
+                                        <constraint firstItem="GOn-qh-cAZ" firstAttribute="top" secondItem="zfY-zQ-gei" secondAttribute="topMargin" constant="4" id="x2M-VT-c46"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="completedButton" destination="Me8-4U-qOz" id="OMN-sM-nMZ"/>
+                                    <outlet property="taskNameLabel" destination="ETe-0e-yWx" id="YJ6-7f-jT3"/>
                                     <segue destination="e7W-af-vY8" kind="show" identifier="showDetailWithTask" id="afJ-fF-ICs"/>
                                 </connections>
                             </tableViewCell>
@@ -129,6 +162,7 @@
         <segue reference="afJ-fF-ICs"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="incomplete" width="512" height="512"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

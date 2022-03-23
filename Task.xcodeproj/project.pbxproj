@@ -16,6 +16,7 @@
 		F8A0890227EBBE3F00C22CB6 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0890127EBBE3F00C22CB6 /* TaskDetailViewController.swift */; };
 		F8A0890627EBC07900C22CB6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0890527EBC07900C22CB6 /* Task.swift */; };
 		F8A0890827EBC0FE00C22CB6 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0890727EBC0FE00C22CB6 /* TaskController.swift */; };
+		F8A0890A27EBCA3100C22CB6 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0890927EBCA3100C22CB6 /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F8A0890127EBBE3F00C22CB6 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		F8A0890527EBC07900C22CB6 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F8A0890727EBC0FE00C22CB6 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
+		F8A0890927EBCA3100C22CB6 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 		7E3C189A259CFBDC00CDB7FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F8A0890927EBCA3100C22CB6 /* TaskTableViewCell.swift */,
 				7EC8F56B259B5AD3003641BD /* Storyboards */,
 			);
 			path = Views;
@@ -186,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A0890A27EBCA3100C22CB6 /* TaskTableViewCell.swift in Sources */,
 				F8A0890027EBBDD500C22CB6 /* TaskListTableViewController.swift in Sources */,
 				F8A0890227EBBE3F00C22CB6 /* TaskDetailViewController.swift in Sources */,
 				F8A0890627EBC07900C22CB6 /* Task.swift in Sources */,
@@ -339,6 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = KMTDCPCY5V;
 				INFOPLIST_FILE = Task/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -359,6 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = KMTDCPCY5V;
 				INFOPLIST_FILE = Task/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

@@ -11,10 +11,6 @@ class TaskListTableViewController: UITableViewController {
 
     // MARK: - Lifecycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         TaskController.shared.loadFromPersistentStore()
@@ -28,9 +24,10 @@ class TaskListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as? TaskTableViewCell else { return UITableViewCell() }
 
-        cell.textLabel?.text = TaskController.shared.tasks[indexPath.row].name
+        cell.delegate = self
+        cell.updateViews(for: TaskController.shared.tasks[indexPath.row])
 
         return cell
     }
@@ -42,21 +39,6 @@ class TaskListTableViewController: UITableViewController {
         }
     }
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,5 +49,15 @@ class TaskListTableViewController: UITableViewController {
             destination.task = TaskController.shared.tasks[indexPath.row]
         }
     }
+}
 
+// MARK: - TaskTableViewCellDelegate
+
+extension TaskListTableViewController: TaskTableViewCellDelegate{
+    
+    func completedButtonTapped(in cell: TaskTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        TaskController.shared.toggleIsCompleteForTask(atIndex: indexPath.row)
+        cell.updateViews(for: TaskController.shared.tasks[indexPath.row])
+    }
 }

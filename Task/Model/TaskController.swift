@@ -35,7 +35,8 @@ class TaskController {
         saveToPersistentStore()
     }
     
-    func toggleIsComplete(for task: Task) {
+    func toggleIsCompleteForTask(atIndex index: Int) {
+        let task = tasks[index]
         task.isComplete = !task.isComplete
         saveToPersistentStore()
     }
