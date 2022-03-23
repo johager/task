@@ -1,6 +1,6 @@
 # Task
 
-This repo is for the Devmountain iOS Bootcamp Task app.
+This is the Devmountain iOS App Developer Bootcamp exercise Task app.
 
 The app has a list of tasks and a task detail view.
 
